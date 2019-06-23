@@ -5,5 +5,5 @@ services:
 before_install:
   - docker build -t frontend -f Dockerfile.dev .
 
-scripts:
+script:
   - docker run frontend npm run test -- --coverage
