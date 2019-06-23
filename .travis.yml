@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run frontend npm run test:ci
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "alpha"
+  env: "Alpha-env"
+  bucket_name: "elasticbeanstalk-us-east-1-872783972671"
+  bucket_path: "alpha"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
