@@ -6,4 +6,4 @@ before_install:
   - docker build -t frontend -f Dockerfile.dev .
 
 script:
-  - docker run frontend npm run test -- --coverage
+  - docker run frontend npm run test:ci
